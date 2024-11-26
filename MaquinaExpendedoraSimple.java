@@ -18,7 +18,7 @@ public class MaquinaExpendedoraSimple {
      * del billete que se recibe es mayor que 0.
      */
     public MaquinaExpendedoraSimple () {
-        
+        precioBillete=10;
         balanceClienteActual = 0;
         totalDineroAcumulado=0;
         estacionOrigen = "León";
