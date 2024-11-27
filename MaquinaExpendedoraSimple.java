@@ -45,10 +45,19 @@ public class MaquinaExpendedoraSimple {
     public void setPrecioBillete(int precioDelBillete) {
         precioBillete=precioDelBillete;
     }
-    public void reducirPrecioBillete (int cantidad) {
+    public void reducirPrecioBillete(int cantidad) {
         precioBillete=precioBillete-cantidad;
         
     }
+    public void vaciarDepositoDinero(){
+    balanceClienteActual=0;
+    totalDineroAcumulado=0;
+
+}
+    
+    
+    
+    
 
     /**
      * Devuelve la cantidad de dinero que el cliente actual lleva introducida
