@@ -6,6 +6,7 @@ public class MaquinaExpendedoraMejorada {
     private int balanceClienteActual;
     // El total de dinero almacenado en la maquina desde su ultimo vaciado
     private int totalDineroAcumulado;
+    
     // El origen del billete
     private String estacionOrigen;
     // El destino del billete
@@ -54,7 +55,9 @@ public class MaquinaExpendedoraMejorada {
      * Imprime un billete para el cliente actual
      */
     public void imprimirBillete() {
-        if (balanceClienteActual >= precioBillete) {        
+        int cantidadDineroQueFalta;
+        cantidadDineroQueFalta = precioBillete-balanceClienteActual;
+        if (cantidadDineroQueFalta==0 && cantidadDineroQueFalta<precioBillete){     
             // Simula la impresion de un billete
             System.out.println("##################");
             System.out.println("# Billete de tren:");
@@ -68,8 +71,22 @@ public class MaquinaExpendedoraMejorada {
             // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
             balanceClienteActual = balanceClienteActual - precioBillete;
         }
+        else if (precioBillete<balanceClienteActual) {
+                    // Simula la impresion de un billete
+            System.out.println("##################");
+            System.out.println("# Billete de tren:");
+            System.out.println("# De " + estacionOrigen + " a " + estacionDestino);
+            System.out.println("# " + precioBillete + " euros.");
+            System.out.println("##################");
+            System.out.println();         
+    
+            // Actualiza el total de dinero acumulado en la maquina
+            totalDineroAcumulado = totalDineroAcumulado + precioBillete;
+            // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
+            balanceClienteActual = balanceClienteActual - precioBillete;    
+        }
         else {
-            System.out.println("Necesitas introducir " + (precioBillete - balanceClienteActual) + " euros mas!");
+            System.out.println("Necesitas introducir " + (cantidadDineroQueFalta) + " euros mas!");
                     
         }            
     }
