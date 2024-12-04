@@ -1,7 +1,7 @@
 public class MaquinaExpendedoraMejorada {
     
     // El precio del billete
-    private int precioBillete;
+    private int precioBillete; 
     // La cantidad de dinero que lleva metida el cliente actual
     private int balanceClienteActual;
     // El total de dinero almacenado en la maquina desde su ultimo vaciado
