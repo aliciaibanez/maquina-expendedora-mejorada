@@ -12,6 +12,7 @@ public class MaquinaExpendedoraMejorada {
     // El destino del billete
     private String estacionDestino;
 
+
     /**
      * Crea una maquina expendedora de billetes de tren con el 
      * precio del billete y el origen y destino dados. Se asume que el precio
@@ -24,7 +25,18 @@ public class MaquinaExpendedoraMejorada {
         estacionOrigen = origen;
         estacionDestino = destino;
     }
-
+    /**
+     * Crea una maquina expendedora de billetes de tren con el 
+     * precio del billete y el origen y destino dados. Se asume que el precio
+     * del billete que se recibe es mayor que 0.
+     */
+    public MaquinaExpendedoraMejorada(){
+        precioBillete = 20;
+        balanceClienteActual = 0;
+        totalDineroAcumulado = 0;
+        estacionOrigen = "León";
+        estacionDestino = "Madrid";
+    }
     /**
      * Devuelve el precio del billete
      */
@@ -89,16 +101,13 @@ public class MaquinaExpendedoraMejorada {
         return cantidadDeDineroADevolver;
     } 
 
-    /**
-     * Crea una maquina expendedora de billetes de tren con el 
-     * precio del billete y el origen y destino dados. Se asume que el precio
-     * del billete que se recibe es mayor que 0.
-     */
-    public MaquinaExpendedoraMejorada(){
-        precioBillete = 20;
+    public int vaciarDineroDeLaMaquina () {
+        int cantidadDeDinero;
+        cantidadDeDinero = balanceClienteActual + totalDineroAcumulado;
         balanceClienteActual = 0;
         totalDineroAcumulado = 0;
-        estacionOrigen = "León";
-        estacionDestino = "Madrid";
-}
+        return cantidadDeDinero;
+        
+     }
+
 }
