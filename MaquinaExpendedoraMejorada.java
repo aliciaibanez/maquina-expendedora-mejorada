@@ -106,8 +106,6 @@ public class MaquinaExpendedoraMejorada {
     if (balanceClienteActual > 0) {
         cantidadDeDinero=totalDineroAcumulado+balanceClienteActual;
         totalDineroAcumulado=0;
-    } else {
-        
     }
     return cantidadDeDinero;
 }
