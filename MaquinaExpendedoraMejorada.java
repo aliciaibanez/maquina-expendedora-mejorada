@@ -25,6 +25,7 @@ public class MaquinaExpendedoraMejorada {
         totalDineroAcumulado = 0;
         estacionOrigen = origen;
         estacionDestino = destino;
+        numeroBilletesVendidos=0;
     }
 
     /**
@@ -38,6 +39,7 @@ public class MaquinaExpendedoraMejorada {
         totalDineroAcumulado = 0;
         estacionOrigen = "León";
         estacionDestino = "Madrid";
+        numeroBilletesVendidos= 0;
     }
 
     /**
@@ -72,7 +74,6 @@ public class MaquinaExpendedoraMejorada {
     public void imprimirBillete() {
         int cantidadDineroQueFalta;
         cantidadDineroQueFalta = precioBillete-balanceClienteActual;
-        numeroBilletesVendidos=numeroBilletesVendidos+1;
         if (cantidadDineroQueFalta<=0) {     
             // Simula la impresion de un billete
             System.out.println("##################");
@@ -86,6 +87,7 @@ public class MaquinaExpendedoraMejorada {
             totalDineroAcumulado = totalDineroAcumulado + precioBillete;
             // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
             balanceClienteActual = balanceClienteActual - precioBillete;
+            numeroBilletesVendidos=numeroBilletesVendidos+1;
         }
 
         else {
