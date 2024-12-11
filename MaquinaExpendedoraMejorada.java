@@ -21,14 +21,14 @@ public class MaquinaExpendedoraMejorada {
      * precio del billete y el origen y destino dados. Se asume que el precio
      * del billete que se recibe es mayor que 0.
      */
-    public MaquinaExpendedoraMejorada(int precioDelBillete, String origen, String destino, boolean premio) {
+    public MaquinaExpendedoraMejorada(int precioDelBillete, String origen, String destino, boolean premiada) {
         precioBillete = precioDelBillete;
         balanceClienteActual = 0;
         totalDineroAcumulado = 0;
         estacionOrigen = origen;
         estacionDestino = destino;
         numeroBilletesVendidos=0;
-        premio=false;
+        premio=premiada;
     }
 
     /**
@@ -36,14 +36,14 @@ public class MaquinaExpendedoraMejorada {
      * precio del billete y el origen y destino dados. Se asume que el precio
      * del billete que se recibe es mayor que 0.
      */
-    public MaquinaExpendedoraMejorada(boolean premio){
+    public MaquinaExpendedoraMejorada(boolean premiada){
         precioBillete = 20;
         balanceClienteActual = 0;
         totalDineroAcumulado = 0;
         estacionOrigen = "León";
         estacionDestino = "Madrid";
         numeroBilletesVendidos= 0;
-        premio=false;
+        premio=premiada;
     }
 
     /**
@@ -78,7 +78,7 @@ public class MaquinaExpendedoraMejorada {
     public void imprimirBillete() {
         int cantidadDineroQueFalta;
         cantidadDineroQueFalta = precioBillete-balanceClienteActual;
-        if (premio==true&&cantidadDineroQueFalta<=0){
+        if (premio &&cantidadDineroQueFalta<=0){
             // Simula la impresion de un billete
             System.out.println("##################");
             System.out.println("# Billete de tren:");
@@ -88,7 +88,7 @@ public class MaquinaExpendedoraMejorada {
             System.out.println();  
             System.out.println ("10% de descuento en euros para Carrefour");
             }
-        else if (premio==false&&cantidadDineroQueFalta<=0){
+        else if (cantidadDineroQueFalta<=0){
         // Simula la impresion de un billete
             System.out.println("##################");
             System.out.println("# Billete de tren:");
