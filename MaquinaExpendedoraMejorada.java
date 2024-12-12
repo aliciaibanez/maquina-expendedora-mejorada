@@ -86,7 +86,10 @@ public class MaquinaExpendedoraMejorada {
             System.out.println("# " + precioBillete + " euros.");
             System.out.println("##################");
             System.out.println();  
-            System.out.println ("10% de descuento en euros para Carrefour");
+            }
+            if (premio) {
+                System.out.println ("10% de descuento en euros para Carrefour");
+                
             }
         else if (cantidadDineroQueFalta<=0){
         // Simula la impresion de un billete
